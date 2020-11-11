@@ -1,0 +1,64 @@
+extends base.pug
+
+    
+block content
+    section.container
+        h1.h5.text-center.mt-2=title
+    if (!error)
+        if(data.length)
+            div(class="container")
+                table(class="table table-responsive table-hover table-striped")
+                    caption Lista parciales de usuarios
+                        thead(class="thead-dark")
+                            tr
+                                th Nombre
+                                th Edad
+                                th Pais
+                                th Twitter
+                                th Sistema operativo
+                                th
+                                th
+                        tbody
+                        each user in data
+                            tr
+                                td #{user.name}
+                                td #{user.age}
+                                td #{user.country}
+                                td #{user.twitter}
+                                td #{user.os}
+                                td
+                                    a(href="/editar/"+user.id,class="btn btn-danger" )
+                                        .
+                                            Editar
+                                td
+                                    form(method="POST", action="/eliminar/")
+                                        input(type="hidden", value=user.id, name="id")
+                                        button(type="submit", class="btn btn-danger")
+                                            .
+                                                Eliminar
+        else
+           div(class="alert alert-info w-50 d-flex text-center", role="alert")
+            .
+                Aun no tienes encuestas
+
+    section.container.d-flex.justify-content-center
+        form(method="GET", action="/crear/")
+            button(type="submit", class="btn btn-primary btn-lg")
+                .
+                    Crear nueva encuesta
+
+
+
+block alert
+    if(error)
+        section.container
+            div(class="alert alert-danger", role="alert")
+                .
+                    #{messageError}
+                button(type="button" class="close" data-dismiss="alert-wait-look" aria-label="Close")
+                    span(aria-hidden="true")
+                    . 
+                        &times;
+
+
+

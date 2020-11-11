@@ -1,0 +1,30 @@
+extends base.pug
+
+block content
+	section.container
+		div
+			form(method="POST", action="/crear", class="")
+				label(for="name", class="mt-2")
+					.
+						Nombre
+				input(type="text",name="name",required=true, class="form-control")
+				label(for="age", class="mt-2")
+					.
+						Edad
+				input(type="number",name="age",required=true, class="form-control")
+				label(for="country",class="mt-2")
+					.
+						País
+				input(type="text",name="country",required=true, class="form-control")
+				label(for="twitter", class="mt-2")
+					.
+						Twitter
+				input(type="text",name="twitter",placeholder="@nombreusuario", class="form-control")
+				label(for="os", class="mt-2")
+					.
+						Sistema operativo
+				input(type="text",name="os",required=true,placeholder="windows or linux or macos", class="form-control")
+
+				button(type="submit", class="btn btn-success btn-lg mt-3")
+					.
+						Agregar
