@@ -27,12 +27,12 @@ block content
                                 td #{user.twitter}
                                 td #{user.os}
                                 td
-                                    a(href="/editar/"+user.id,class="btn btn-danger" )
+                                    a(href="/editar/"+user._id,class="btn btn-danger" )
                                         .
                                             Editar
                                 td
                                     form(method="POST", action="/eliminar/")
-                                        input(type="hidden", value=user.id, name="id")
+                                        input(type="hidden", value=user._id, name="id")
                                         button(type="submit", class="btn btn-danger")
                                             .
                                                 Eliminar
