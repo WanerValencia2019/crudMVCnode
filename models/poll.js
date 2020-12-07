@@ -15,7 +15,7 @@ class PollModel {
     save(data, callback) {
         Poll.exists({ _id: data._id }, (err, value) => {
             if (value) {
-                Poll.update({ _id: data._id }, { $set: data }, callback);
+                Poll.updateOne({ _id: data._id }, { $set: data }, callback);
             } else {
                 const new_poll = new Poll(data);
                 new_poll.save(callback);

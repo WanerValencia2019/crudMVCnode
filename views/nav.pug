@@ -1,6 +1,12 @@
 nav(class="navbar  navbar-light bg-dark" style="background-color: #e3f2fd;")
   a(class="navbar-brand" href="/")
     img(src="/static/favicon.ico" width="50" height="40" class="d-inline-block align-top" alt="icono" loading="lazy")
+
     a.text-white OS WAR
+    form(action="/logout", method="post")
+      button(type="submit", class="btn badge badge-danger")
+        .
+          Salir
+
 
 

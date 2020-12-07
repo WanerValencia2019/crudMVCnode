@@ -1,0 +1,25 @@
+extends base.pug
+
+
+block content  
+    section.container.mt-5
+        h1.text-center.pt-5 Bienvenido
+
+        form(action="/login", method="POST", class="d-flex flex-column justify-content-center align-items-center")
+            div
+                label(for="username")
+                    .
+                        Nombre de usuario
+                input(type="text", name="username", class="form-control")
+            div
+                label(for="password")
+                    .
+                        Contraseña
+                input(type="password", name="password", class="form-control")
+            hr
+            button(type="submit", class="mt-2 btn btn-success")
+                .
+                    Iniciar sesión
+            a(href="/register", class="badge badge-primary alert-info mt-3")
+                .
+                    ¿No tienes una cuenta? Registrate!!

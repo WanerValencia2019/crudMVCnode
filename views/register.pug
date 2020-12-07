@@ -1,0 +1,48 @@
+extends base.pug
+
+
+
+block content
+    section.container.mt-5
+        h1.text-center.pt-5 Unete a nuestra comunidad
+        form(action="/register", method="post", class="mt-3 border rounded p-4")
+            h5.text-left.font-weight-bold Información personal
+            div.row.ml-3
+                div.col
+                    label(for="firstName")
+                        .
+                            Nombre
+
+                    input(type="text", class="form-control", name="firstName" )
+                div.col
+                    label(for="lastName")
+                        .
+                            Apellidos
+
+                    input(type="text", class="form-control", name="lastName" )
+        
+            hr
+            h5.text-left.font-weight-bold Credenciales
+            div.row.ml-3
+                div.col
+                    label(for="username")
+                        .
+                            Nombre de usuario
+
+                    input(type="text", class="form-control", name="username")
+                div.col
+                    label(for="password")
+                        .
+                            Contraseña
+
+                    input(type="password", class="form-control", name="password")
+
+            div.container.d-flex.justify-content-center.flex-column
+                button(type="submit", class="btn btn-outline-success mt-2 btn-lg w-25 align-self-center")
+                    .
+                        Registrate
+
+
+                a(href="/login", class="badge badge-success alert-info mt-3 w-25 align-self-center")
+                    .
+                        ¿Tienes una cuenta? Iniciar sesión

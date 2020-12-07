@@ -1,7 +1,7 @@
 {
   "name": "mvc",
-  "version": "1.0.0",
-  "description": "",
+  "version": "3.0.0",
+  "description": "Esta una api rest, hecha con mongodb y express",
   "main": "server.js",
   "scripts": {
     "start": "nodemon server.js"
@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-myconnection": "^1.0.4",
+    "express-session": "^1.17.1",
     "mongoose": "^5.11.0",
     "morgan": "^1.10.0",
     "mysql": "^2.18.1",
